@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <title>자연 심리 테스트</title>
+    <head>
+        <!--글씨체-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+        <!--파비콘 appres.org-->
+        <link rel="icon" type="image/png"
+href="https://cdn.appres.org/premium/e494b657e28cb612e2737d206877e814f012e97a/icons/favicon_.ico"/>
+        <!--css파일 연결-->
+        <link rel="stylesheet" type="text/css" href="inputstyle.css">
+    </head>
+    <script>
+    function chkChar(obj){
+    var RegExp = /[\{\}\[\]\/?.,;:|\)*~`!^\-_+┼<>@\#$%&\'\"\\\(\=]/gi;	//정규식 구문
+    if (RegExp.test(obj.value)) {
+        // 특수문자 모두 제거    
+        obj.value = obj.value.replace(RegExp , '');
+        }
+    }
+    </script>
+    
+    <body>
+        <div class="backback">
+        <!-- 타이틀과 사진 영역 -->
+        <div class="flexbox" style="position: relative;">
+            <img src="/image/main_img.jpg">
+        <div class="nowitem" style="top:84px; bottom:263px; left:94px; right:83px; position: absolute;">
+            <h1>나의 타고난<br>자연의 모습은?</h1>
+        </div>
+        </div>
+
+
+
+
+        <!-- 중간 문장과 인풋 영역 -->
+        <div class="textmid1">
+            <h3>현재 ~~명이 참여했어요!</h3>
+            </div>
+        <div class="textmid2">생년월일로 알아보는 나의 타고난 성향 테스트
+        </div>
+            <div class="name">이름 : <input type="text" name="birthname" onkeyup="chkChar(this)"  minlength="4" maxlength="5" size="42">
+            </div>
+            <div class="birth">생년월일 : <input type="text" id="year" onkeyup="chkChar(this)" required minlength="4" maxlength="4" size="4">년
+                                        <input type="text" id="month" onkeyup="chkChar(this)" required minlength="1" maxlength="2" size="2">월
+                                        <input type="text" id="date" onkeyup="chkChar(this)" required minlength="1" maxlength="2" size="2">일 
+            <!-- 양력음력 -->
+            <select id="solarselect">
+                <option value="yang" selected>양력</option>
+                <option value="um">음력</option>
+            </select>
+            </div>
+
+
+
+
+        <!-- 하단 영역 -->
+        <div class="flexboxbottom">
+            <div class="item4">사용자의 개인정보는 테스트를 위한 용도로만 사용됩니다.<br>
+                따로 저장되거나 유출되지 않습니다.
+            </div>
+            <form>
+            <button name="startbtn" type="submit" formaction="/output1.html">시작하기</button>
+            </form>
+        </div>
+        </div>
+
+        <footer class="footer">Copyright Ⓒ Meet eum - Sonㅣ Won seok - An ㅣ
+            Tae gon - Kim . All rights reserved.</footer>
+    </body>
+</html>

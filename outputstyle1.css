@@ -1,0 +1,101 @@
+*{
+    font-family: 'Noto Sans KR', sans-serif;
+    list-style: none;
+    text-decoration: none;
+    border-collapse: collapse;
+    margin: 0px;
+    padding: 0px;
+    color: #000;
+}
+.main{
+    font-family: 'Jua', sans-serif;
+    text-align: center;
+}
+.flexbox{
+    display: flex;
+    max-width: 960px;
+    height : auto;
+    justify-content: center;
+    margin : 0 auto;
+    margin-top: 50px;
+}
+.flexboxmiddle{
+    text-align: center;
+    max-width: 960px;
+    height : auto;
+    justify-content: center;
+    margin : auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color:#E5E5E5;
+}
+.flexboxmiddle>h3{
+    font-family: 'Jua', sans-serif;
+}
+.share{
+    font-family: 'Jua', sans-serif;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-size: 22px;
+    height: 80px;
+}
+.shareitem{
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    margin-bottom: 40px;
+}
+.navericon{
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    border: none;
+    margin : 10px;
+}
+.kakaoicon{
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    border: none;
+    margin : 10px;
+}
+.facebookicon{
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    border: none;
+    margin : 10px;
+}
+.twittericon{
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    border: none;
+    margin : 10px;
+}
+.url{
+    margin: 5px;
+}
+.resultbottom{
+    justify-content: center;
+    display: flex;
+    margin-top: 20px;
+}
+.resultbottom> button:first-child{
+    font-family: 'Jua', sans-serif;
+    width: 260px;
+    margin-right: 20px;
+}
+.resultbottom> button:last-child{
+    font-family: 'Jua', sans-serif;
+    width : 260px;
+    margin-right: 0px;
+}
+.footer{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
