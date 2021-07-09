@@ -14,7 +14,7 @@
 .flexbox{
     display: flex;
     justify-content: center;
-    margin : 101px auto 50px auto;
+    margin : 30px auto 50px auto;
 }
 
 .nowitem{
@@ -29,13 +29,17 @@
                 3px 0 #000,
                 0 -3px #000;
 }
+.textmid1{
+    margin-bottom: 30px;
+}
 .textmid1 > h3{
     font-family: 'Jua', sans-serif;
     font-size: 30px;
-    color: #000;
+    color: #333333;
 }
 .textmid2{
     text-align : center;
+    color: #444444;
     width : 100%;
     height : 25px;
     font-size: 19px;
@@ -46,24 +50,59 @@
     text-align: center;
     font-size: 20px;
     margin-bottom: 20px;
+    color: #333333;
 }
 .name>input{
-    border-radius: 7px;
+    border-radius: 10px;
+    border : 2px solid #c4c4c4;
+    box-sizing: border-box;
     opacity: 0.4;
+    font-size: 20px;
+    width: 400px;
     height: 52px;
 }
 
 .birth{
-    text-align: center;
+    display: flex;
+    justify-content: center;
     font-size: 20px;
+    color: #333333;
 }
 .birth>input{
-    border-radius: 7px;
+    border-radius: 10px;
+    border : 2px solid #c4c4c4;
+    box-sizing: border-box;
     opacity: 0.4;
     height: 52px;
-}
-.select>option{
     font-size: 20px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+#year{
+    width: 110px;
+    height: 52px;
+}
+#month{
+    width: 50px;
+    height: 52px;
+}
+#date{
+    width: 50px;
+    height: 52px;
+}
+select{
+    width: 96px;
+    height: 52px;
+    font-size: 20px;
+    border-radius: 10px;
+    border : 2px solid #c4c4c4;;
+    box-sizing: border-box;
+    margin-left: 2px;
+    background: url('/image/selectdown.png') no-repeat 95% 50%;
+    appearance: none;
+}
+select::-ms-expand{
+    display: none;
 }
 
 
@@ -74,12 +113,14 @@
     justify-content: center;
     margin : 0 auto;
     margin-top: 15px;
-    margin-bottom: 13px;
+    margin-bottom: 50px;
 }
 .flexboxbottom > div{
-    font-size: 11px;
-    color: grey;
-    margin-bottom: 9px;
+    font-size: 16px;
+    color: #000000;
+    opacity: 0.3;
+    margin-top: 25px;
+    margin-bottom: 20px;
 }
 .flexboxbottom > input{
     font-family: 'Jua', sans-serif;
@@ -97,7 +138,8 @@
     justify-content: center;
     text-align: center;
     background-color: rgba(211, 211, 211, 0.5);
+    color: #333333;
     height: 40px;
     padding-top: 40px;
-    padding-bottom: 20px;
+    padding-bottom: 50px;
 }

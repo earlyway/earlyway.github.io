@@ -5,12 +5,14 @@
     border-collapse: collapse;
     margin: 0px;
     padding: 0px;
-    color: #000;
+    color: #333333;
 }
 .main{
     font-family: 'Jua', sans-serif;
     text-align: center;
     color : #333333;
+    font-size: 45px;
+    margin-top: 60px;
 }
 .flexbox{
     display: flex;
@@ -52,34 +54,35 @@
 }
 .shareitem{
     display: flex;
-    justify-content: center;
-    margin-top: 25px;
-    margin-bottom: 40px;
+    text-align: center;
+    justify-content: space-between;
+    margin : 40px auto 20px auto;
+    width: 454px;
 }
 .navericon{
-    width: 44px;
-    height: 44px;
+    width: 100px;
+    height: 100px;
     cursor: pointer;
     border: none;
     margin : 10px;
 }
 .kakaoicon{
-    width: 44px;
-    height: 44px;
+    width: 100px;
+    height: 100px;
     cursor: pointer;
     border: none;
     margin : 10px;
 }
 .facebookicon{
-    width: 44px;
-    height: 44px;
+    width: 100px;
+    height: 100px;
     cursor: pointer;
     border: none;
     margin : 10px;
 }
 .twittericon{
-    width: 44px;
-    height: 44px;
+    width: 100px;
+    height: 100px;
     cursor: pointer;
     border: none;
     margin : 10px;
