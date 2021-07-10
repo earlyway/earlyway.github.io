@@ -59,36 +59,21 @@
     margin : 40px auto 20px auto;
     width: 454px;
 }
-.navericon{
-    width: 100px;
-    height: 100px;
-    cursor: pointer;
-    border: none;
-    margin : 10px;
+#fb{
+    max-width: 100px;
+    max-height: 100px;
 }
-.kakaoicon{
-    width: 100px;
-    height: 100px;
-    cursor: pointer;
-    border: none;
-    margin : 10px;
+#kakao{
+    max-width: 100px;
+    max-height: 100px;
 }
-.facebookicon{
-    width: 100px;
-    height: 100px;
-    cursor: pointer;
-    border: none;
-    margin : 10px;
+#twt{
+    max-width: 100px;
+    max-height: 100px;
 }
-.twittericon{
-    width: 100px;
-    height: 100px;
-    cursor: pointer;
-    border: none;
-    margin : 10px;
-}
-.url{
-    margin: 5px;
+#urll{
+    max-width: 100px;
+    max-height: 100px;
 }
 .resultbottom{
     justify-content: center;
@@ -127,4 +112,87 @@
     margin-bottom: 20px;
     padding-top: 30px;
     padding-bottom: 20px;
+}
+
+@media screen and (max-width : 320px){
+    .main{
+        font-size: 22px;
+    }
+    .flexbox>img{
+        width: 200px;
+        height: 200px;
+    }
+    .flexboxmiddle{
+        margin-top: 0px;
+    }
+    .flexboxmiddle>h3{
+        font-size: 19px;
+    }
+    .flexboxmiddle>div{
+        font-size: 13px;
+    }
+    .share{
+        font-size: 15px;
+        background-color:rgba(211, 211, 211, 0.1);
+    }
+    .shareitem{
+        background-color:rgba(211, 211, 211, 0.1);
+        display: flex;
+        justify-content: center;
+        margin: auto auto 15px;
+        padding-bottom: 20px;
+        width: 320px;
+    }
+    #fb{
+        flex: 1;
+        width: 50px;
+        height: 50px;
+        margin-left: auto;
+        margin-right: 10px;
+
+    }
+    #kakao{
+        flex: 1;
+        width: 50px;
+        height: 50px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    #twt{
+        flex: 1;
+        width: 50px;
+        height: 50px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    #urll{
+        flex: 1;
+        width: 50px;
+        height: 50px;
+        margin-left: 10px;
+        margin-right: auto;
+    }
+
+
+    .resultbottom{
+        display: inline-block;
+        margin: auto;
+        text-align: center;
+
+    }
+    #restart{
+        width: 260px;
+        height: 50px;
+        margin : 10px auto 10px auto;
+    }
+    #resultdown{
+        width: 260px;
+        height: 50px;
+        margin : 10px auto 10px auto;
+    }
+    .footer{
+        font-size: 7px;
+        text-align: center;
+        padding-bottom: 30px;
+    }
 }
