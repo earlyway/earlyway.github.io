@@ -39,8 +39,11 @@
     font-size: 28px;
     color: #333333;
 }
-.flexboxmiddle>div{
+.flexboxmiddle>div:first-child{
     font-size: 22px;
+}
+.flexboxmiddle>div:last-child{
+    display: none;
 }
 .share{
     font-family: 'Jua', sans-serif;
@@ -133,8 +136,13 @@
     .flexboxmiddle>h3{
         font-size: 19px;
     }
-    .flexboxmiddle>div{
-        font-size: 13px;
+    #name{
+        display: none;
+    }
+    #name2{
+        font-size: 14px;
+        word-break: keep-all;
+        text-align: center;
     }
     .share{
         font-size: 15px;

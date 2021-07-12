@@ -180,6 +180,7 @@ select::-ms-expand{
         font-size: 11px;
     }
     .name{
+        text-align: left;
         display: block;
         font-size: 13px;
     }
@@ -188,6 +189,7 @@ select::-ms-expand{
         height: 36px;
     }
     .birth{
+        text-align: left;
         display: block;
         font-size: 13px;
     }
