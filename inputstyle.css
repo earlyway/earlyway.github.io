@@ -141,16 +141,26 @@ select::-ms-expand{
     outline: 0;
     cursor: pointer;
 }
-.footer{
+.input_share{
+    font-family: 'Jua', sans-serif;
+    display: none;
+}
+.input_shareitem{
+    display: none;
+}
+.input_footerpc{
     display: flex;
     justify-content: center;
-    text-align: center;
     background-color: rgba(211, 211, 211, 0.5);
     color: #333333;
+    font-size: 8px;
     height: 40px;
     padding-top: 30px;
     padding-bottom: 30px;
     line-height: 2.5;
+}
+.input_footermobile{
+    display: none;
 }
 
 @media all and (max-width : 320px){
@@ -159,7 +169,8 @@ select::-ms-expand{
     }
     .textmid1{
         width: 206px;
-        margin : auto;
+        margin-left: 50px;
+        margin-right: 50px;
     }
     .textmid1>h3{
         font-size: 13px;
@@ -205,9 +216,62 @@ select::-ms-expand{
         height: 50px;
         font-size: 18px;
     }
+    .input_share{
+        display: block;
+        font-size: 15px;
+        padding-top: 15px;
+        background-color:rgba(211, 211, 211, 0.1);
+    }
+    .input_shareitem{
+        background-color:rgba(211, 211, 211, 0.1);
+        display: flex;
+        justify-content: center;
+        margin: auto auto 15px;
+        padding-bottom: 20px;
+        width: 320px;
+        
+    }
+    #fb{
+        flex: 1;
+        width: 50px;
+        height: 50px;
+        margin-left: auto;
+        margin-right: 10px;
 
-
-    .footer{
-        font-size: 8px;
+    }
+    #kakao{
+        flex: 1;
+        width: 50px;
+        height: 50px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    #twt{
+        flex: 1;
+        width: 50px;
+        height: 50px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    #urll{
+        flex: 1;
+        width: 50px;
+        height: 50px;
+        margin-left: 10px;
+        margin-right: auto;
+    }
+    .input_footerpc{
+        display: none;
+    }
+    .input_footermobile{
+        display: flex;
+    justify-content: center;
+    background-color: rgba(211, 211, 211, 0.4);
+    text-align: center;
+    color: #333333;
+    font-size: 7px;
+    margin-top: 50px;
+    padding-top: 25px;
+    padding-bottom: 25px;
     }
 }
