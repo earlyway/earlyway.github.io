@@ -39,11 +39,11 @@
     font-size: 28px;
     color: #333333;
 }
-.flexboxmiddle>div:first-child{
+#content_pc{
     font-size: 22px;
     word-break: keep-all;
 }
-.flexboxmiddle>div:last-child{
+#content_mobile{
     display: none;
 }
 .share{
@@ -137,10 +137,10 @@
     .flexboxmiddle>h3{
         font-size: 19px;
     }
-    .flexboxmiddle>div:first-child{
+    #content_pc{
         display: none;
     }
-    .flexboxmiddle>div:last-child{
+    #content_mobile{
         display: flex;
         justify-content: center;
         font-size: 14px;
@@ -148,7 +148,7 @@
         text-align: center;
     }
     .share{
-        font-size: 15px;
+        font-size: 24px;
         background-color:rgba(211, 211, 211, 0.1);
     }
     .shareitem{
@@ -197,11 +197,13 @@
 
     }
     #restart{
+        font-size: 24px;
         width: 260px;
         height: 50px;
         margin : 10px auto 10px auto;
     }
     #resultdown{
+        font-size: 24px;
         width: 260px;
         height: 50px;
         margin : 10px auto 10px auto;

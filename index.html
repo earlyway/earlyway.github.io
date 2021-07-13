@@ -26,7 +26,7 @@ href="https://cdn.appres.org/premium/e494b657e28cb612e2737d206877e814f012e97a/ic
     </script>
 
 
-    <body style="overflow-x: hidden;">
+    <body style="overflow: hidden;">
         <div class="backback">
         <!-- 타이틀과 사진 영역 -->
         <div class="flexbox" style="position: relative;">
@@ -43,12 +43,15 @@ href="https://cdn.appres.org/premium/e494b657e28cb612e2737d206877e814f012e97a/ic
         <div class="textmid2">생년월일로 알아보는 나의 타고난 성향 테스트
         </div>
         <form action="/output1.html" method="get">
-            <div class="name">이  름  : <input type="text" name="birth" onkeyup="chkChar(this)" minlength="2" maxlength="5" size="40" required oninvalid="this.setCustomValidity('이름과 생년월일을 입력해주세요.')"
+            <div class="name"><span id="nname">이름</span>
+                <input type="text" name="birth" onkeyup="chkChar(this)" minlength="2" maxlength="4" size="40" required oninvalid="this.setCustomValidity('이름과 생년월일을 입력해주세요.')"
                 oninput = "setCustomValidity('')"/>
             </div>
-            <div class="birth">생년월일 :<input type="number" name="birth" id="year" onkeyup="chkChar(this)" pattern="[0-9]{4}" title="'yyyy'와 같은 4자리 숫자" min="1900" max="2049"  size="4" /><span>년</span>
-                                        <input type="number" name="birth" id="month" onkeyup="chkChar(this)" pattern="[0-9]{2}" title="'04,12'와 같은 2자리 숫자" min="01" max="12"  size="2" /><span>월</span>
-                                        <input type="number" name="birth" id="date" onkeyup="chkChar(this)" pattern="[0-9]{2}" title="'03,15,26'와 같은 2자리 숫자" min="01" max="31"  size="2" /><span>일</span>
+            <span id="bbirthday">생년월일<br></span>
+            <div class="birth">
+                <input type="number" name="birth" id="year" onkeyup="chkChar(this)" pattern="[0-9]{4}" title="'yyyy'와 같은 4자리 숫자" min="1900" max="2049"  size="4" /><span id="spanyear">&nbsp;년&nbsp;</span>
+                <input type="number" name="birth" id="month" onkeyup="chkChar(this)" pattern="[0-9]{2}" title="'04,12'와 같은 2자리 숫자" min="01" max="12"  size="2" /><span id="spanmonth">&nbsp;월&nbsp;</span>
+                <input type="number" name="birth" id="date" onkeyup="chkChar(this)" pattern="[0-9]{2}" title="'03,15,26'와 같은 2자리 숫자" min="01" max="31"  size="2" /><span id="spanday">&nbsp;일&nbsp;</span>
             <!-- 양력음력 -->
             <select id="solarselect">
                 <option value="yang" selected>양력</option>
@@ -67,7 +70,7 @@ href="https://cdn.appres.org/premium/e494b657e28cb612e2737d206877e814f012e97a/ic
             <input type="submit" value="시작하기" onclick="check_onclick()">
         </div>
         </form>
-        <div class="input_share">테스트 결과 공유하기
+        <div class="input_share">테스트 공유하기
         </div>
         <div class="input_shareitem">
             <a href="http://facebook.com" target="_blank"><img src="image/fb.png" alt="fb_connect" id="fb"></a>
@@ -81,7 +84,7 @@ href="https://cdn.appres.org/premium/e494b657e28cb612e2737d206877e814f012e97a/ic
             Copyright Ⓒ Meet eum - Sonㅣ Won seok - An ㅣ Tae gon - Kim . All rights reserved.
         </div>
         <div class="input_footermobile">
-            Copyright Ⓒ Meet eum - Sonㅣ Won seok - An ㅣ<br> Tae gon - Kim . All rights reserved.
+            Copyright Ⓒ Meet eum - Sonㅣ Won seok - Anㅣ<br> Tae gon - Kim ㅣ All rights reserved.
         </div>
     </body>
 </html>
