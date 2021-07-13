@@ -7,6 +7,9 @@
     padding: 0px;
     color: #333333;
 }
+*::-webkit-scrollbar{
+    display: none;
+}
 .main{
     font-family: 'Jua', sans-serif;
     text-align: center;
