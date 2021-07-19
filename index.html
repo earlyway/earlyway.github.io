@@ -2,61 +2,17 @@
 <html lang="ko">
     <title>나의 타고난 자연의 모습은?</title>
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0", user-scalable=no />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"  />
         <!--글씨체-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR&display=swap" rel="stylesheet">
         <!--파비콘 appres.org-->
         <link rel="icon" type="image/png"
-href="https://cdn.appres.org/premium/e494b657e28cb612e2737d206877e814f012e97a/icons/favicon_.ico"/>
+        href="https://cdn.appres.org/premium/e494b657e28cb612e2737d206877e814f012e97a/icons/favicon_.ico"/>
         <!--css파일 연결-->
         <link rel="stylesheet" type="text/css" href="inputstyle.css">
         </head>
-
-    <script>
-    function chkChar(obj){
-    var RegExp = /[\{\}\[\]\/?.,;:|\)*~`!^\-_+┼<>@\#$%&\'\"\\\(\=]/gi;	//정규식 구문
-    if (RegExp.test(obj.value)) {
-        // 특수문자 모두 제거    
-        obj.value = obj.value.replace(RegExp , '');
-        }
-    }
-    //생년월일에 글자수 제한.
-    function MaxLengthCheck(e,maxlength){
-        if(e.value.length > maxlength){
-            e.value = e.value.substr(0, maxlength);
-        }
-    }
-    function check_onclick(){
-            var username = document.getElementById("username").value;
-            var yearr = document.getElementById("yearr").value;
-            var monthh = document.getElementById("monthh").value;
-            var datee = document.getElementById("datee").value;
-
-            if(username == ""){
-                alert("이름을 입력하세요.");
-                username.focus();
-                return false;
-            };
-            if(yearr == ""){
-                alert("연도를 입력하세요.");
-                yearr.focus();
-                return false;
-            }
-            if(monthh == ""){
-                alert("월을 입력하세요.");
-                monthh.focus();
-                return false;
-            }
-            if(datee == ""){
-                alert("일을 입력하세요.");
-                datee.focus();
-                return false;
-            };
-            document.join_form.submit();
-        }
-    </script>
 
 
     <body>
@@ -82,9 +38,9 @@ href="https://cdn.appres.org/premium/e494b657e28cb612e2737d206877e814f012e97a/ic
             </div>
             <span id="bbirthday">생년월일<br></span>
             <div class="birth">
-                <input type="number"  id="yearr" min="1900" max="2049"  size="4" oninput='MaxLengthCheck(this,4)'/><span id="spanyear">&nbsp;년&nbsp;</span>
-                <input type="number"  id="monthh" min="1" max="12"  size="2"  oninput='MaxLengthCheck(this,2)'/><span id="spanmonth">&nbsp;월&nbsp;</span>
-                <input type="number"  id="datee" min="1" max="31"  size="2" oninput='MaxLengthCheck(this,2)'/><span id="spanday">&nbsp;일&nbsp;</span>
+                <input type="number"  id="yearr" min="1900" max="2049"  size="4" onchange="limitYear()"/><span id="spanyear">&nbsp;년&nbsp;</span>
+                <input type="number"  id="monthh" min="1" max="12"  size="2" maxlength="2" onchange="limitMonth()"/><span id="spanmonth">&nbsp;월&nbsp;</span>
+                <input type="number"  id="datee" min="1" max="31"  size="2" maxlength="2" onchange="limitDate()" oninput="MaxLengthCheck(this)"/><span id="spanday">&nbsp;일&nbsp;</span>
             <!-- 양력음력 -->
             <select id="solarselect">
                 <option value="yang" selected>양력</option>
@@ -119,5 +75,92 @@ href="https://cdn.appres.org/premium/e494b657e28cb612e2737d206877e814f012e97a/ic
         <div class="input_footermobile">
             Copyright Ⓒ Meet eum - Sonㅣ Won seok - Anㅣ<br> Tae gon - Kim ㅣ All rights reserved.
         </div>
+
+        <script>
+            function chkChar(obj){
+            var RegExp = /[\{\}\[\]\/?.,;:|\)*~`!^\-_+┼<>@\#$%&\'\"\\\(\=]/gi;	//정규식 구문
+            if (RegExp.test(obj.value)) {
+                // 특수문자 모두 제거    
+                obj.value = obj.value.replace(RegExp , '');
+                }
+            }
+            //생년월일에 글자수 제한.  input 안에 oninput="MaxLengthCheck(this)" attribute 추가.
+            function MaxLengthCheck(e,maxlength){
+                if(e.value.length > maxlength){
+                    e.value = e.value.substr(0, maxlength);
+                }
+            }
+            function limitYear(){
+                console.log('값확인',document.getElementById('yearr').value);
+                if(document.getElementById('yearr').value < 1900){ 
+                    document.getElementById('yearr').value = 1900;
+                    alert("생년월일은 양력/음력 기준으로\n 1900년~2049년까지만 입력 가능합니다.")
+                }
+                else if(document.getElementById('yearr').value >= 2050){
+                    document.getElementById('yearr').value = 2049;
+                    alert("생년월일은 양력/음력 기준으로\n 1900년~2049년까지만 입력 가능합니다.")
+                }
+                if (object.value < 1900 && object.value.length > 3) {
+                $("#yearr").val("");
+                } else if (object.value > 2049 && object.value.length > 3) {
+                $("#yearr").val("");
+                }
+            }
+            function limitMonth(){
+                console.log('값확인',document.getElementById('monthh').value);
+	            if(document.getElementById('monthh').value >=13){
+		            document.getElementById('monthh').value=12;
+                }
+		        else if(document.getElementById('monthh').value<1){
+		            document.getElementById('monthh').value=1;
+	            }
+		        if(object.value >12 && object.value.length >2){
+			        $("#monthh").val("");
+		        }
+            }
+            function limitDate(){
+                console.log('값확인',document.getElementById('datee').value);
+	            if(document.getElementById('datee').value >=32){
+		            document.getElementById('datee').value=31;
+                }
+		        else if(document.getElementById('datee').value<1){
+		            document.getElementById('datee').value=1;
+		        }
+            }	
+
+
+
+        
+        
+        
+            function check_onclick(){
+                    var username = document.getElementById("username").value;
+                    var yearr = document.getElementById("yearr").value;
+                    var monthh = document.getElementById("monthh").value;
+                    var datee = document.getElementById("datee").value;
+        
+                    if(username == ""){
+                        alert("이름을 입력해주세요.");
+                        username.focus();
+                        return false;
+                    };
+                    if(yearr == ""){
+                        alert("생년월일을 입력해주세요.");
+                        yearr.focus();
+                        return false;
+                    }
+                    if(monthh == ""){
+                        alert("생년월일을 입력해주세요.");
+                        monthh.focus();
+                        return false;
+                    }
+                    if(datee == ""){
+                        alert("생년월일을 입력해주세요.");
+                        datee.focus();
+                        return false;
+                    };
+                    document.join_form.submit();
+                }
+            </script>
     </body>
 </html>
