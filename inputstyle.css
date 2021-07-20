@@ -85,40 +85,45 @@
     margin: 0px 300px 0px auto;
     color:#333333;
 }
-.birth>input{
-    border-radius: 10px;
-    border : 2px solid #c4c4c4;
-    box-sizing: border-box;
-    opacity: 0.4;
+#yearr{
+    width: 120px;
     height: 52px;
     font-size: 20px;
-    margin-left: 2px;
-    margin-right: 2px;
-    padding-left: 10px;
-}
-#spanyear{
-    margin-top: 17px;
-    color:#333333;
-}
-#spanmonth{
-    margin-top: 17px;
-    color:#333333;
-}
-#spanday{
-    margin-top: 17px;
-    color:#333333;
-}
-#yearr{
-    width: 110px;
-    height: 52px;
+    border-radius: 10px;
+    border : 2px solid #c4c4c4;
+    opacity: 0.4;
+    box-sizing: border-box;
+    background: url('/image/selectdown.png') no-repeat 95% 50%;
+    appearance: none;
+    margin-left: 0px;
+    margin-right: 7px;
+    
 }
 #monthh{
-    width: 50px;
+    width: 70px;
     height: 52px;
+    font-size: 20px;
+    border-radius: 10px;
+    border : 2px solid #c4c4c4;
+    opacity: 0.4;
+    box-sizing: border-box;
+    margin-left: 7px;
+    margin-right: 7px;
+    background: url('/image/selectdown.png') no-repeat 95% 50%;
+    appearance: none;
 }
 #datee{
-    width: 50px;
+    width: 70px;
     height: 52px;
+    font-size: 20px;
+    border-radius: 10px;
+    border : 2px solid #c4c4c4;
+    opacity: 0.4;
+    box-sizing: border-box;
+    margin-left: 7px;
+    margin-right: 7px;
+    background: url('/image/selectdown.png') no-repeat 95% 50%;
+    appearance: none;
 }
 select{
     width: 96px;
@@ -128,7 +133,7 @@ select{
     border : 2px solid #c4c4c4;
     opacity: 0.4;
     box-sizing: border-box;
-    margin-left: 2px;
+    margin-left: 7px;
     background: url('/image/selectdown.png') no-repeat 95% 50%;
     appearance: none;
     padding-left: 10px;
@@ -231,14 +236,17 @@ select::-ms-expand{
     #yearr{
         width: 70px;
         height : 45px;
+        font-size: 13px;
     }
     #monthh{
         width: 45px;
         height: 45px;
+        font-size: 13px;
     }
     #datee{
         width: 45px;
         height: 45px;
+        font-size: 13px;
     }
     #solarselect{
         width: 70px;
