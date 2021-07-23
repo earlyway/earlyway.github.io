@@ -2,6 +2,7 @@
 <html lang="ko">
     <title>나의 타고난 자연의 모습은?</title>
     <head>
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0", user-scalable=no />
         <!--글씨체-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,12 +13,17 @@
         href="https://cdn.appres.org/premium/e494b657e28cb612e2737d206877e814f012e97a/icons/favicon_.ico"/>
         <!--css파일 연결-->
         <link rel="stylesheet" type="text/css" href="outputstyle1.css">
+
+
+
+
     </head>
-
-
     <body>
         
-        <h1 class="main">@@@ 님에 타고난 자연의 모습은?</h1>
+        <h1 class="main" >
+
+
+            </h1>
         <!-- 사진 영역 -->
         <div class="flexbox">
             <img src="../output_main_img/sea.png"><br>
@@ -61,5 +67,23 @@
         <div class="footermobile">
             Copyright Ⓒ Meet eum - Sonㅣ Won seok - An ㅣ<br> Tae gon - Kim . All rights reserved.
         </div>
+
+        <script>
+            var url = decodeURI(location.search);
+
+            temp = url?.split("?"); 
+            data=temp && temp[1].split("="); 
+            name = data[1];
+            
+            
+            
+            //document.getElementsByClassName("main")[0].innerHTML="2님에 타고난 자연의 모습은?";
+            //const mainstr = name + "님에 타고난";
+            const mainstr="님에 타고난 자연의 모습은?";
+            document.getElementsByClassName("main")[0].innerHTML=name + mainstr;
+            //console.log(mainstr);
+            //document.getElementsByClassName("main")[0].innerHTML=mainstr;
+            
+            </script>
 </body>
 </html>

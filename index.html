@@ -2,6 +2,7 @@
 <html lang="ko">
     <title>나의 타고난 자연의 모습은?</title>
     <head>
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"  />
         <!--글씨체-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,9 +32,9 @@
         </div>
         <div class="textmid2">생년월일로 알아보는 나의 타고난 성향 테스트
         </div>
-        <form name="join_form" action="/output1.html" method="get">
+        <form name="join_form" action="/output1.html" accept-charset="utf-8" method="get">
             <div class="name"><span id="nname">이름</span>
-                <input type="text" name="birth" id="username" onkeyup="chkChar(this)" minlength="2" maxlength="4" size="40" required
+                <input type="text" name="input_username" id="username" onkeyup="chkChar(this)" minlength="2" maxlength="4" size="40" required
                 oninput = "setCustomValidity('')"/>
             </div>
             <span id="bbirthday">생년월일<br></span>
@@ -243,9 +244,9 @@
 
         <script>
             function chkChar(obj){
-            var RegExp = /[\{\}\[\]\/?.,;:|\)*~`!^\-_+┼<>@\#$%&\'\"\\\(\=]/gi;	//정규식 구문
+            let RegExp = /[\{\}\[\]\/?.,;:|\)*~`!^\-_+┼<>@\#$%&\'\"\\\(\=]/gi;	//정규식 구문
             if (RegExp.test(obj.value)) {
-                // 특수문자 모두 제거    
+                // 특수문자 모두 제거
                 obj.value = obj.value.replace(RegExp , '');
                 }
             }
@@ -293,6 +294,12 @@
                     };
                     document.join_form.submit();
                 }
+
+
+
+                
             </script>
+            
+
     </body>
 </html>

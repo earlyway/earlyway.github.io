@@ -234,24 +234,30 @@ select::-ms-expand{
         font-size: 13px;
     }
     #yearr{
-        width: 70px;
+        width: 80px;
         height : 45px;
         font-size: 13px;
+        margin-right: 5px;
     }
     #monthh{
-        width: 45px;
+        width: 60px;
         height: 45px;
         font-size: 13px;
+        margin-left: 5px;
+        margin-right: 5px;
     }
     #datee{
-        width: 45px;
+        width: 60px;
         height: 45px;
         font-size: 13px;
+        margin-left: 5px;
+        margin-right: 5px;
     }
     #solarselect{
         width: 70px;
         height : 45px;
         font-size: 13px;
+        margin-left: 5px;
     }
     .flexboxbottom>div{
         font-size: 11px;
