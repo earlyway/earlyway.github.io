@@ -69,7 +69,7 @@
         </div>
 
         <script>
-            var url = decodeURI(location.search);
+            let url = decodeURI(location.search);
 
             temp = url?.split("?"); 
             data=temp && temp[1].split("="); 
@@ -79,7 +79,7 @@
             
             //document.getElementsByClassName("main")[0].innerHTML="2님에 타고난 자연의 모습은?";
             //const mainstr = name + "님에 타고난";
-            const mainstr="님에 타고난 자연의 모습은?";
+            const mainstr="\n님에 타고난 자연의 모습은?";
             document.getElementsByClassName("main")[0].innerHTML=name + mainstr;
             //console.log(mainstr);
             //document.getElementsByClassName("main")[0].innerHTML=mainstr;

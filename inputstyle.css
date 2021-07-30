@@ -57,7 +57,7 @@
     margin: 0px 330px 0px auto;
     color: #333333;
 }
-.name>input{
+.name_label>input{
     border-radius: 10px;
     border : 2px solid #c4c4c4;
     box-sizing: border-box;
@@ -144,7 +144,7 @@ select::-ms-expand{
 
 
 
-.flexboxbottom{ 
+.flexbox_bottom{ 
     max-width: 960px;
     height : auto;
     justify-content: center;
@@ -152,16 +152,16 @@ select::-ms-expand{
     margin-top: 15px;
     margin-bottom: 50px;
 }
-.flexboxbottom > div{
+.flexbox_bottom > div{
     font-size: 16px;
     color: #000000;
     opacity: 0.3;
     margin-top: 30px;
     margin-bottom: 30px;
 }
-.flexboxbottom > input{
+.flexbox_bottom > input{
     font-family: 'Jua', sans-serif;
-    font-size: 24px;
+    font-size: 28px;
     color : #fff;
     background-color: #666666;
     width: 400px;
@@ -211,7 +211,7 @@ select::-ms-expand{
     .textmid2{
         font-size: 11px;
     }
-    .name{
+    .name_label{
         text-align: center;
         font-size: 13px;
     }
@@ -253,16 +253,16 @@ select::-ms-expand{
         margin-left: 5px;
         margin-right: 5px;
     }
-    #solarselect{
+    #date_type{
         width: 70px;
         height : 45px;
         font-size: 13px;
         margin-left: 5px;
     }
-    .flexboxbottom>div{
+    .flexbox_bottom>div{
         font-size: 11px;
     }
-    .flexboxbottom>input{
+    .flexbox_bottom>input{
         width: 300px;
         height: 50px;
         font-size: 24px;
