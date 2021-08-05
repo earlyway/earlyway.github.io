@@ -85,7 +85,7 @@
     margin: 0px 300px 0px auto;
     color:#333333;
 }
-#yearr{
+#select_year{
     width: 120px;
     height: 52px;
     font-size: 20px;
@@ -99,7 +99,7 @@
     margin-right: 7px;
     
 }
-#monthh{
+#select_month{
     width: 70px;
     height: 52px;
     font-size: 20px;
@@ -112,7 +112,7 @@
     background: url('/image/selectdown.png') no-repeat 95% 50%;
     appearance: none;
 }
-#datee{
+#select_day{
     width: 70px;
     height: 52px;
     font-size: 20px;
@@ -220,7 +220,7 @@ select::-ms-expand{
         font-size: 13px;
         margin : 10px 270px 5px 10px
     }
-    .name>input{
+    .name_label>input{
         width: 300px;
         height: 45px;
     }
@@ -233,20 +233,20 @@ select::-ms-expand{
         text-align: center;
         font-size: 13px;
     }
-    #yearr{
+    #select_year{
         width: 80px;
         height : 45px;
         font-size: 13px;
         margin-right: 5px;
     }
-    #monthh{
+    #select_month{
         width: 60px;
         height: 45px;
         font-size: 13px;
         margin-left: 5px;
         margin-right: 5px;
     }
-    #datee{
+    #select_day{
         width: 60px;
         height: 45px;
         font-size: 13px;
