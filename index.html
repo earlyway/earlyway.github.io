@@ -10,7 +10,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR&display=swap" rel="stylesheet">
         <!--파비콘 appres.org-->
         <link rel="icon" type="image/png"
-        href="https://cdn.appres.org/premium/e494b657e28cb612e2737d206877e814f012e97a/icons/favicon_.ico"/>
+        href="/image/favicon_.png"/>
         <!--css파일 연결-->
         <link rel="stylesheet" type="text/css" href="inputstyle.css">
         </head>
@@ -32,29 +32,30 @@
         </div>
         <div class="textmid2">생년월일로 알아보는 나의 타고난 성향 테스트
         </div>
-        <form name="join_form" action="/output1.html" accept-charset="utf-8" method="get">
+        <form name="join_form" action="" accept-charset="utf-8" method="get">
             <div class="name_label"><span id="nname">이름</span>
                 <input type="text" name="input_username" id="username" onkeyup="chkChar(this)" minlength="2" maxlength="4" size="40" required
                 oninput = "setCustomValidity('')"/>
             </div>
             <span id="bbirthday">생년월일<br></span>
             <div class="birth">
-                <select id="select_year" onchange="javascript:lastday();">
+                <select id="select_year" onchange="javascript:lastdayNew();">
                     <option value="yyyy" selected>연도</option>
                 </select>  
                 
-                <select id="select_month" onchange="javascript:lastday();"> 
+                <select id="select_month" onchange="javascript:lastdayNew();">
                     <option value="mm" selected>월</option>
                 </select>
                 
                 <select id="select_day">
                     <option value="dd" selected>일</option>
+                    <option value="1" >1</option>
                 </select>
                 
             <!-- 양력음력 -->
             <select id="date_type">
-                <option value="yang" selected>양력</option>
-                <option value="eum">음력</option>
+                <option value="양력" selected>양력</option>
+                <option value="음력">음력</option>
             </select>
             </div>
 
@@ -67,6 +68,7 @@
                 따로 저장되거나 유출되지 않습니다.
             </div>
             <input type="button" value="시작하기" onclick="check_onclick()">
+            <input type="submit" formaction="http://psychologicaltest.pythonanywhere.com/v1/result?date_type=date_type&name=username&year=select_year&month=select_month&day=select_day" value="a">
         </div>
         </form>
         <div class="input_share">테스트 공유하기
@@ -87,6 +89,7 @@
         </div>
 
         <script>
+            //이름 입력에 특문 제거 function
             function chkChar(obj){
             let RegExp = /[\{\}\[\]\/?.,;:|\)*~`!^\-_+┼<>@\#$%&\'\"\\\(\=]/gi;	//정규식 구문
             if (RegExp.test(obj.value)) {
@@ -94,25 +97,16 @@
                 obj.value = obj.value.replace(RegExp , '');
                 }
             }
-            //생년월일에 글자수 제한.  input 안에 oninput="MaxLengthCheck(this)" attribute 추가.
-            function MaxLengthCheck(e,maxlength){
-                if(e.value.length > maxlength){
-                    e.value = e.value.substr(0, maxlength);
-                }
-            }
+            
 
-
-
-
-
-
+            //시작하기 버튼 클릭시에 유효성검사 function
             function check_onclick(){
                     var username = document.getElementById("username").value;
                     var select_year = document.getElementById("select_year").value;
                     var select_month = document.getElementById("select_month").value;
                     var select_day = document.getElementById("select_day").value;
 
-                    if(username == ""){
+                    if(!username){
                         alert("이름을 입력해주세요.");
                         username.focus();
                         return false;
@@ -123,21 +117,53 @@
                     };
                     if(select_year == "yyyy"){
                         alert("연도를 선택해주세요.");
-                        yearr.focus();
                         return false;
                     }
                     if(select_month == "mm"){
                         alert("월을 입력해주세요.");
-                        select_month.focus();
                         return false;
                     }
                     if(select_day == "dd"){
                         alert("일을 선택해주세요.");
-                        select_day.focus();
                         return false;
                     };
-                    document.join_form.submit();
-                }
+
+
+                    var userAction = async () => {
+    const username = document.getElementById("username").value;
+    const select_year = document.getElementById("select_year").value;
+    const select_month = document.getElementById("select_month").value;
+    const select_day = document.getElementById("select_day").value;
+    const date_type = document.getElementById("date_type").value;
+
+
+            const response = await fetch("http://psychologicaltest.pythonanywhere.com/v1/result?"+
+                "date_type=" +date_type + "&name="+ username +"&year="+ select_year +"&month="+ select_month +"&day="+ select_day );
+//http://psychologicaltest.pythonanywhere.com/v1/result?date_type=date_type&name=username&year=select_year&month=select_month&day=select_day
+            const result = await response.json();
+            let result_key = result["result_key"];
+            let name = result['name']
+            console.log(result_key)
+            const htmlObject = {
+                "갑": "./output_tree.html",
+                "을": "./output_weed.html",
+                "병": "./output_sun.html",
+                "정": "./output_moon.html",
+                "무": "./output_mountain.html",
+                "기": "./output_land.html",
+                "경": "./output_rock.html",
+                "신": "./output_jewelry.html",
+                "임": "./output1.html",
+                "계": "./output_rain.html"
+            }
+            window.location.href = htmlObject[result_key] + "?name="+username;
+            }
+
+
+                    userAction();
+            }
+
+
 
 
 
@@ -154,25 +180,53 @@
         document.getElementById('select_month').options[index] = new Option(m, m); 
         index++; 
     } 
-    lastday(); 
-    function lastday(){ //년과 월에 따라 마지막 일 구하기 
-        var Year=document.getElementById('select_year').value; 
-        var Month=document.getElementById('select_month').value; 
-        var day=new Date(new Date(Year,Month,1)-86400000).getDate(); /* = new Date(new Date(Year,Month,0)).getDate(); */ 
-        var dayindex_len=document.getElementById('select_day').length; 
-        if(day>dayindex_len){
-            for(var i=(dayindex_len+1); i<=day; i++){
-                document.getElementById('select_day').options[i-1] = new Option(i, i); 
-                }
-        } 
-        else if(day<dayindex_len){ 
-            for(var i=dayindex_len; i>=day; i--){ 
-            document.getElementById('select_day').options[i]=null; 
-            } 
-        } 
-    } 
+    
+    
+    //연도, 월 선택 후 윤년 구현 fucntion
+function lastdayNew() {
+        const year = document.getElementById("select_year").value;
+        const month = document.getElementById("select_month").value;
+        const day = new Date(new Date(year, month, 1) - 86400000).getDate();
+        if(!(year > 0 && month > 0)) {
+            console.log(true);
+            return;
+        }
+        
+        
+        const daySelect = document.getElementById("select_day");
+        
+        daySelect.options.length = 0;
+        for (let i = 1; i <= day; i++) {
+        let option = document.createElement("option");
+        option.text = i;
+        option.value = i;
+        daySelect.append(option);
+        }
+    }
+    async function fn_count(){ //쿼리스트링 사용자에게 받은 값을 가공 후에 다시 출력시키기 위해 필요.
+    const response = await fn_fetch('http://psychologicaltest.pythonanywhere.com/v1/count','GET');
+    const result = await response.json();
+    console.log(result);
+    }
+    async function fn_fetch(url, method, data) {
+    try {
+    const response = await fetch(url, {//쿼리스트링 사용자에게 받은 값을 가공 후에 다시 출력시키기 위해 필요.
+        method: method ? method : "GET",
+        headers: {
+        "Content-Type": "application/json;charset=utf-8",
+        },
+        body: JSON.stringify(data),
+    });
+    if (response.ok) {
+        return await response;
+    }
+    throw new Error();
+    } catch (e) {
+    console.log("error : " + e);
+    }
+}
+
             </script>
             
-
     </body>
 </html>
