@@ -67,14 +67,13 @@
             <div class="item4">사용자의 개인정보는 테스트를 위한 용도로만 사용됩니다.<br>
                 따로 저장되거나 유출되지 않습니다.
             </div>
-            <input type="button" value="시작하기" onclick="check_onclick()">
-            <input type="submit" formaction="https://psychologicaltest.pythonanywhere.com/v1/result?date_type=date_type&name=username&year=select_year&month=select_month&day=select_day" value="a">
+            <input type="button" value="시작하기" onclick="check_onclick()" formaction="https://psychologicaltest.pythonanywhere.com/v1/result?date_type=date_type&name=username&year=select_year&month=select_month&day=select_day">
+
         </div>
         </form>
         <div class="input_share">테스트 공유하기
         </div>
         <div class="input_shareitem">
-            <a href="http://facebook.com" target="_blank"><img src="image/fb.png" alt="fb_connect" id="fb"></a>
             <a href="http://kakao.com" target="_blank" ><img src="image/kakao.png" alt="kakao_connect" id="kakao"></a>
             <a href="http://twitter.com" target="_blank"><img src="image/twiter.png" alt="twt_connect" id="twt"></a>
             <a href="http://www.naver.com" target="_blank"><img src="image/url2.png" alt="url_connect" id="urll"></a>
@@ -160,7 +159,7 @@
             }
 
 
-                    userAction();
+                userAction();
             }
 
 
