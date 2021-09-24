@@ -16,7 +16,7 @@
         <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
         <script>
             Kakao.init('9ab361fdcf3b4b9225616d84cd4bb39d');
-            Kakao.isInitialized();
+            
         </script>
         </head>
 
@@ -79,11 +79,9 @@
         <div class="input_share">테스트 공유하기
         </div>
         <div class="input_shareitem">
-            <button type="button" onclick="kakaoShare()"><img src="image/kakao.png" alt="kakao_connect" id="kakao"></button>
-            
-            <a href="http://twitter.com" target="_blank"><img src="image/twiter.png" alt="twt_connect" id="twt"></a>
-            <a href="http://www.naver.com" target="_blank"><img src="image/url2.png" alt="url_connect" id="urll"></a>
-            <script src="./lib/kakao.js" charset="utf-8"></script>
+            <a href="javascript:sendLink()"id="kakao-link-btn" class="kakao"><img src="image/kakao.png" alt="kakao_connect" id="kakao"></a>
+            <!--<a href="http://twitter.com" target="_blank"><img src="image/twiter.png" alt="twt_connect" id="twt"></a>-->
+            <!--<a href="http://www.naver.com" target="_blank"><img src="image/url2.png" alt="url_connect" id="urll"></a>-->
         </div>
 
         </div>
@@ -165,7 +163,6 @@
             window.location.href = htmlObject[result_key] + "?name="+username;
             }
 
-
                 userAction();
             }
 
@@ -235,7 +232,44 @@ function lastdayNew() {
 
 
 
-            </script>
-            
+function sendLink(){
+    Kakao.Link.sendDefault({
+            objectType: 'feed',
+            content: {
+            title: '디저트 사진',
+            description: '아메리카노, 빵, 케익',
+            imageUrl:
+                'http://mud-kage.kakao.co.kr/dn/NTmhS/btqfEUdFAUf/FjKzkZsnoeE4o19klTOVI1/openlink_640x640s.jpg',
+            link: {
+                mobileWebUrl: 'https://developers.kakao.com',
+                androidExecutionParams: 'test',
+            },
+            },
+            social: {
+            likeCount: 10,
+            commentCount: 20,
+            sharedCount: 30,
+            },
+            buttons: [
+            {
+                title: '웹으로 이동',
+                link: {
+                mobileWebUrl: 'https://developers.kakao.com',
+                },
+            },
+            {
+                title: '앱으로 이동',
+                link: {
+                mobileWebUrl: 'https://developers.kakao.com',
+                },
+            },
+            ]
+        });
+}
+
+
+
+
+    </script>
     </body>
 </html>
