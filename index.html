@@ -80,10 +80,11 @@
         <div class="input_share">테스트 공유하기
         </div>
         <div class="input_shareitem">
-            <button type="button" target="_blank" onclick="kakaoShare()"><img src="image/kakao.png" alt="kakao_connect" id="kakao"></button>
+            <button type="button" target="_blank" onclick="js:kakaoShare()"><img src="image/kakao.png" alt="kakao_connect" id="kakao"></button>
             
             <a href="http://twitter.com" target="_blank"><img src="image/twiter.png" alt="twt_connect" id="twt"></a>
             <a href="http://www.naver.com" target="_blank"><img src="image/url2.png" alt="url_connect" id="urll"></a>
+            <script src="./lib/kakao.js" charset="utf-8"></script>
         </div>
 
         </div>
@@ -231,45 +232,6 @@ function lastdayNew() {
     console.log("error : " + e);
     }
 }
-
-
-
-function kakaoShare(){
-    Kakao.Link.sendDefault({
-    objectType: 'feed',
-    content: {
-        title: '디저트 사진',
-        description: '아메리카노, 빵, 케익',
-        imageUrl:
-        'http://mud-kage.kakao.co.kr/dn/NTmhS/btqfEUdFAUf/FjKzkZsnoeE4o19klTOVI1/openlink_640x640s.jpg',
-        link: {
-        mobileWebUrl: 'https://developers.kakao.com',
-        androidExecutionParams: 'test',
-        },
-    },
-    social: {
-        likeCount: 10,
-        commentCount: 20,
-        sharedCount: 30,
-    },
-    buttons: [
-        {
-        title: '웹으로 이동',
-        link: {
-            mobileWebUrl: 'https://developers.kakao.com',
-        },
-        },
-        {
-        title: '앱으로 이동',
-        link: {
-            mobileWebUrl: 'https://developers.kakao.com',
-        },
-        },
-    ]
-    });
-}
-
-
 
 
 
