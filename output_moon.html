@@ -1,87 +1,129 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <title>나의 타고난 자연의 모습은?</title>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0", user-scalable=no />
-        <!--글씨체-->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR&display=swap" rel="stylesheet">
-        <!--파비콘 appres.org-->
-        <link rel="icon" type="image/png"
-        href="/image/favicon_.png"/>
-        <!--css파일 연결-->
-        <link rel="stylesheet" type="text/css" href="outputstyle1.css">
-    </head>
+<title>나의 타고난 자연의 모습은?</title>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" , user-scalable=no />
+    <!--글씨체-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <!--파비콘 appres.org-->
+    <link rel="icon" type="image/png" href="/image/favicon_.png" />
+    <!--css파일 연결-->
+    <link rel="stylesheet" type="text/css" href="outputstyle1.css">
+    <!-- 카카오톡 공유하기-->
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script>
+        Kakao.init('9ab361fdcf3b4b9225616d84cd4bb39d');
+    </script>
+</head>
 
 
-    <body>
-        <h1 class="main">
+<body>
+    <h1 class="main">
 
-        </h1>
-        <!-- 사진 영역 -->
-        <div class="flexbox">
-            <img src="../output_main_img/moon.png"><br>
+    </h1>
+    <!-- 사진 영역 -->
+    <div class="flexbox"><img src="../output_main_img/moon.png"><br>
+    </div>
+    <!-- 결과 문장 영역-->
+    <div class="flexboxmiddle">
+        <h3>차가운 달처럼 조용하고 냉정할 듯 하나<br>
+            약하면서 부드러운 당신<br><br></h3>
+        <div id="content_pc">
+            내면에는 정열을 간직하고 있어 진취적인 면이 있습니다.<br>
+            자존심과 집념이 강하고 정신력이 뛰어난 사람입니다. <br>
+            선비정신이 강하고 인정이 많고 헌신적입니다. <br>
+            당신은 많은 사람들이 따르고 좋아하나 <br>
+            자신은 항상 외로움을 느끼는 경우가 많습니다.<br>
+            섭섭한 일이 생기면 마음에 두고 좀처럼 잊지 못하여<br>
+            마음의 병이 생기기 쉽기에 주의해야 합니다. <br>
         </div>
-        <!-- 결과 문장 영역-->
-        <div class="flexboxmiddle">
-            <h3>차가운 달처럼 조용하고 냉정할 듯 하나<br>
-                약하면서 부드러운 당신<br><br></h3>
-            <div id="content_pc">
-                내면에는 정열을 간직하고 있어 진취적인 면이 있습니다.<br>
-자존심과 집념이 강하고 정신력이 뛰어난 사람입니다. <br>
-선비정신이 강하고 인정이 많고 헌신적입니다. <br>
-당신은 많은 사람들이 따르고 좋아하나 <br>
-자신은 항상 외로움을 느끼는 경우가 많습니다.<br>
-섭섭한 일이 생기면 마음에 두고 좀처럼 잊지 못하여<br>
-마음의 병이 생기기 쉽기에 주의해야 합니다. <br>
-            </div>
-            <div id="content_mobile">
-                내면에는 정열을 간직하고 있어 진취적인 면이 있습니다.<br>
-자존심과 집념이 강하고 정신력이 뛰어난 사람입니다. <br>
-선비정신이 강하고 인정이 많고 헌신적입니다. <br>
-당신은 많은 사람들이 따르고 좋아하나 <br>
-자신은 항상 외로움을 느끼는 경우가 많습니다.<br>
-섭섭한 일이 생기면 마음에 두고 좀처럼 잊지 못하여<br>
-마음의 병이 생기기 쉽기에 주의해야 합니다. <br>
-            </div>
+        <div id="content_mobile">
+            내면에는 정열을 간직하고 있어 진취적인 면이 있습니다.<br>
+            자존심과 집념이 강하고 정신력이 뛰어난 사람입니다. <br>
+            선비정신이 강하고 인정이 많고 헌신적입니다. <br>
+            당신은 많은 사람들이 따르고 좋아하나 <br>
+            자신은 항상 외로움을 느끼는 경우가 많습니다.<br>
+            섭섭한 일이 생기면 마음에 두고 좀처럼 잊지 못하여<br>
+            마음의 병이 생기기 쉽기에 주의해야 합니다. <br>
         </div>
-        <!-- 하단 영역 -->
-        <div class="share">테스트 결과 공유하기
+    </div>
+    <!-- 하단 영역 -->
+    <div class="share">테스트 결과 공유하기
+    </div>
+    <form id="shareitembox">
+        <div class="shareitem">
+            <a href="javascript:sendLink()" id="kakao-link-btn" class="kakao"><img src="image/kakao.png"
+                    alt="kakao_connect" id="kakao"></a>
+            <!--<a href="http://twitter.com" target="_blank"><img src="image/twiter.png" alt="twt_connect" id="twt"></a>-->
+            <!--<a href="http://www.naver.com" target="_blank"><img src="image/url2.png" alt="url_connect" id="urll"></a>-->
         </div>
-        <form id="shareitembox">
-            <div class="shareitem">
-                <a href="http://kakao.com" target="_blank" ><img src="image/kakao.png" alt="kakao_connect" id="kakao"></a>
-                <a href="http://twitter.com" target="_blank"><img src="image/twiter.png" alt="twt_connect" id="twt"></a>
-                <a href="http://www.naver.com" target="_blank"><img src="image/url2.png" alt="url_connect" id="urll"></a>
-            </div>
         <div class="resultbottom">
             <button name="restart" type="submit" id="restart" formaction="/index.html">다시하기</button>
         </div>
-        </form>
-        <div class="footerpc">
-            Copyright Ⓒ Meet eum - Sonㅣ Won seok - An ㅣ Tae gon - Kim . All rights reserved.
-        </div>
-        <div class="footermobile">
-            Copyright Ⓒ Meet eum - Sonㅣ Won seok - An ㅣ<br> Tae gon - Kim . All rights reserved.
-        </div>
-        <script>
-            let url = decodeURI(location.search);
+    </form>
+    <div class="footerpc">
+        Copyright Ⓒ Meet eum - Sonㅣ Won seok - An ㅣ Tae gon - Kim . All rights reserved.
+    </div>
+    <div class="footermobile">
+        Copyright Ⓒ Meet eum - Sonㅣ Won seok - An ㅣ<br> Tae gon - Kim . All rights reserved.
+    </div>
+    <script>
+        let url = decodeURI(location.search);
 
-            temp = url?.split("?"); 
-            data=temp && temp[1].split("="); 
-            name = data[1];
-            
-            
-            
-            //document.getElementsByClassName("main")[0].innerHTML="2님에 타고난 자연의 모습은?";
-            //const mainstr = name + "님에 타고난";
-            const mainstr="\n님에 타고난 자연의 모습은?";
-            document.getElementsByClassName("main")[0].innerHTML=name + mainstr;
-            //console.log(mainstr);
-            //document.getElementsByClassName("main")[0].innerHTML=mainstr;
-            
-            </script>
+        temp = url?.split("?");
+        data = temp && temp[1].split("=");
+        name = data[1];
+
+
+
+        //document.getElementsByClassName("main")[0].innerHTML="2님에 타고난 자연의 모습은?";
+        //const mainstr = name + "님에 타고난";
+        const mainstr = "\n님에 타고난 자연의 모습은?";
+        document.getElementsByClassName("main")[0].innerHTML = name + mainstr;
+        //console.log(mainstr);
+        //document.getElementsByClassName("main")[0].innerHTML=mainstr;
+
+
+        function sendLink() {
+            Kakao.Link.sendDefault({
+                objectType: 'feed',
+                content: {
+                    title: '디저트 사진',
+                    description: '아메리카노, 빵, 케익',
+                    imageUrl:
+                        'http://mud-kage.kakao.co.kr/dn/NTmhS/btqfEUdFAUf/FjKzkZsnoeE4o19klTOVI1/openlink_640x640s.jpg',
+                    link: {
+                        mobileWebUrl: 'https://developers.kakao.com',
+                        androidExecutionParams: 'test',
+                    },
+                },
+                social: {
+                    likeCount: 10,
+                    commentCount: 20,
+                    sharedCount: 30,
+                },
+                buttons: [
+                    {
+                        title: '웹으로 이동',
+                        link: {
+                            mobileWebUrl: 'https://developers.kakao.com',
+                        },
+                    },
+                    {
+                        title: '앱으로 이동',
+                        link: {
+                            mobileWebUrl: 'https://developers.kakao.com',
+                        },
+                    },
+                ]
+            });
+        }
+
+    </script>
 </body>
+
 </html>
