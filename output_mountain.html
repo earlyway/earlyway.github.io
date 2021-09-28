@@ -5,6 +5,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" , user-scalable=no />
+    <meta property="og:url"           content="https://earlyway.github.io/" />
+    <meta property="og:title"         content="나의 타고난 자연의 모습은?1" />
+    <meta property="og:description"   content="생년월일로 알아보는 나의 타고난 성향 테스트1" />
+    <meta property="og:image"         content="/share/kakao/input.jpg" />
     <!--글씨체-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +20,7 @@
     <!-- 카카오톡 공유하기-->
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
     <script>
-        Kakao.init('9ab361fdcf3b4b9225616d84cd4bb39d');
+        Kakao.init('5bb339cadb6a8c53105514b7e3df11c2');
     </script>
 </head>
 
@@ -94,31 +98,20 @@
             Kakao.Link.sendDefault({
                 objectType: 'feed',
                 content: {
-                    title: '디저트 사진',
-                    description: '아메리카노, 빵, 케익',
-                    imageUrl:
-                        'http://mud-kage.kakao.co.kr/dn/NTmhS/btqfEUdFAUf/FjKzkZsnoeE4o19klTOVI1/openlink_640x640s.jpg',
+                    title: '나의 타고난 자연의 모습은?',
+                    description: '큰 산처럼 믿음직스러운 당신',
+                    imageUrl: 'https://i.imgur.com/RiYot2z.jpg',
                     link: {
-                        mobileWebUrl: 'https://developers.kakao.com',
-                        androidExecutionParams: 'test',
+                        mobileWebUrl: 'https://earlyway.github.io/symritest_mountain',
+                        webUrl: 'https://earlyway.github.io/symritest_mountain'
                     },
-                },
-                social: {
-                    likeCount: 10,
-                    commentCount: 20,
-                    sharedCount: 30,
                 },
                 buttons: [
                     {
-                        title: '웹으로 이동',
+                        title: '테스트 결과보기',
                         link: {
-                            mobileWebUrl: 'https://developers.kakao.com',
-                        },
-                    },
-                    {
-                        title: '앱으로 이동',
-                        link: {
-                            mobileWebUrl: 'https://developers.kakao.com',
+                            mobileWebUrl: 'https://earlyway.github.io/symritest_mountain',
+                            webUrl: 'https://earlyway.github.io/symritest_mountain'
                         },
                     },
                 ]

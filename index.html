@@ -6,9 +6,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
     <meta property="og:url"           content="https://earlyway.github.io/" />
-    <meta property="og:title"         content="나의 타고난 자연의 모습은?" />
-    <meta property="og:description"   content="생년월일로 알아본느 나의 타고난 성향 테스트" />
-    <meta property="og:image"         content="/share/kakao/input.jpg" />
+    <meta property="og:title"         content="나의 타고난 자연의 모습은?1" />
+    <meta property="og:description"   content="생년월일로 알아보는 나의 타고난 성향 테스트1" />
+    <meta property="og:image"         content="https://ibb.co/HtQkBTH" />
     <!--글씨체-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,6 +17,7 @@
     <link rel="icon" type="image/png" href="/image/favicon_.png" />
     <!--css파일 연결-->
     <link rel="stylesheet" type="text/css" href="inputstyle.css">
+    <!-- 카카오톡 공유하기-->
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
     <script>
         Kakao.init('5bb339cadb6a8c53105514b7e3df11c2');
@@ -88,6 +89,7 @@
                     alt="kakao_connect" id="kakao"></a>
             <!--<a href="http://twitter.com" target="_blank"><img src="image/twiter.png" alt="twt_connect" id="twt"></a>-->
             <!--<a href="http://www.naver.com" target="_blank"><img src="image/url2.png" alt="url_connect" id="urll"></a>-->
+            <script src="./share.js"></script>
         </div>
 
     </div>
@@ -234,36 +236,6 @@
                 console.log("error : " + e);
             }
         }
-
-
-
-
-        function sendLink() {
-            Kakao.Link.sendDefault({
-                objectType: 'feed',
-                content: {
-                    title: '나의 타고난 자연의 모습은?',
-                    description: '생년월일로 알아보는 나의 타고난 성향 테스트',
-                    imageUrl:
-                        '/share/kakao/input.jpg',
-                    link: {
-                        mobileWebUrl: 'https://earlyway.github.io/',
-                    },
-                },
-                buttons: [
-                    {
-                        title: '테스트 시작',
-                        link: {
-                            mobileWebUrl: 'https://earlyway.github.io/',
-                        },
-                    },
-                ]
-            });
-        }
-
-
-
-
     </script>
 </body>
 
