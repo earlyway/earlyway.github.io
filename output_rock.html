@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <title>나의 타고난 자연의 모습은?</title>
-
+<!--rock-->
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" , user-scalable=no />
@@ -75,8 +75,9 @@
         <div class="shareitem">
             <a href="javascript:sendLink()" id="kakao-link-btn" class="kakao"><img src="image/kakao.png"
                     alt="kakao_connect" id="kakao"></a>
-            <!--<a href="http://twitter.com" target="_blank"><img src="image/twiter.png" alt="twt_connect" id="twt"></a>-->
-            <!--<a href="http://www.naver.com" target="_blank"><img src="image/url2.png" alt="url_connect" id="urll"></a>-->
+            <a href="javascript:shareTwitter();" target="_self"><img src="image/twiter.png" alt="twt_connect" id="twt"></a>
+            <a href="javascript:copyToClipboard(val)" id="textarea" onclick="copy()" target="_self">
+                <img src="image/url2.png" alt="url_connect" id="urll"></a>
         </div>
         <div class="resultbottom">
             <button name="restart" type="submit" id="restart" formaction="/index.html">다시하기</button>
@@ -129,6 +130,27 @@
                 ]
             });
         }
+        function copyToClipboard(val) {
+            const t = document.createElement("textarea");
+            document.body.appendChild(t);
+            t.value = val;
+            t.select();
+            document.execCommand('copy');
+            document.body.removeChild(t);
+        }
+        function copy() {
+            copyToClipboard('https://earlyway.github.io/symritest_rock');
+            console.log('Copied!');
+            alert("url 주소 복사가 완료되었습니다. 테스트 결과를 공유해보세요 🙂")
+        }
+
+        //twitter 공유기능
+        function shareTwitter() {
+            var sendText = "나의 타고난 자연의 모습은? 결과 보러가기"; // 전달할 텍스트
+            var sendUrl = "https://earlyway.github.io/symritest_rock"; // 전달할 URL
+            window.open("https://twitter.com/intent/tweet?text=" + sendText + "&url=" + sendUrl);
+        }
+
     </script>
 </body>
 

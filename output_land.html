@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="ko">
 <title>나의 타고난 자연의 모습은?</title>
-
+<!--land-->
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" , user-scalable=no />
-    <meta property="og:url"           content="https://earlyway.github.io/" />
-    <meta property="og:title"         content="나의 타고난 자연의 모습은!" />
-    <meta property="og:description"   content="생년월일로 알아보는 나의 타고난 성향 테스트!" />
-    <meta property="og:image"         content="./share/kakao/land_.jpg" />
+    <meta property="og:url" content="https://earlyway.github.io/" />
+    <meta property="og:title" content="나의 타고난 자연의 모습은!" />
+    <meta property="og:description" content="생년월일로 알아보는 나의 타고난 성향 테스트!" />
+    <meta property="og:image" content="./share/kakao/land_.jpg" />
     <!--글씨체-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -66,8 +66,10 @@
         <div class="shareitem">
             <a href="javascript:sendLink()" id="kakao-link-btn" class="kakao"><img src="image/kakao.png"
                     alt="kakao_connect" id="kakao"></a>
-            <!--<a href="http://twitter.com" target="_blank"><img src="image/twiter.png" alt="twt_connect" id="twt"></a>-->
-            <!--<a href="http://www.naver.com" target="_blank"><img src="image/url2.png" alt="url_connect" id="urll"></a>-->
+            <a href="javascript:shareTwitter();" target="_self"><img src="image/twiter.png" alt="twt_connect" id="twt"></a>
+            <a href="javascript:copyToClipboard(val)" id="textarea" onclick="copy()" target="_self">
+                <img src="image/url2.png" alt="url_connect" id="urll"></a>
+            <script src="./urlShare.js"></script>
         </div>
         <div class="resultbottom">
             <button name="restart" type="submit" id="restart" formaction="/index.html">다시하기</button>
@@ -119,6 +121,13 @@
                     },
                 ]
             });
+        }
+
+        //twitter 공유기능
+        function shareTwitter() {
+            var sendText = "나의 타고난 자연의 모습은? 결과 보러가기"; // 전달할 텍스트
+            var sendUrl = "https://earlyway.github.io/symritest_land"; // 전달할 URL
+            window.open("https://twitter.com/intent/tweet?text=" + sendText + "&url=" + sendUrl);
         }
 
     </script>
