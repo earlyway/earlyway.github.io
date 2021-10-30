@@ -212,6 +212,10 @@ select::-ms-expand{
         justify-content: center;
         margin : 0px auto 5px auto;
     }
+    #api-count{
+        font-family: 'Jua', sans-serif;
+        font-size: 17px;
+    }
     .textmid2{
         font-size: 11px;
     }
