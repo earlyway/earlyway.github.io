@@ -38,7 +38,10 @@
 
         <!-- 중간 문장과 인풋 영역 -->
         <div class="textmid1">
-            <h3>현재 123,456명이 참여했어요!</h3>
+            <h3>현재 
+                <span id="api-count">
+                </span> 명이 참여했어요!
+            </h3>
         </div>
         <div class="textmid2">생년월일로 알아보는 나의 타고난 성향 테스트
         </div>
@@ -133,7 +136,7 @@
                 return false;
             }
             if (select_month == "mm") {
-                alert("월을 선택해주세요.");
+                alert("월을 입력해주세요.");
                 return false;
             }
             if (select_day == "dd") {
@@ -215,28 +218,29 @@
                 daySelect.append(option);
             }
         }
-        async function fn_count() { //쿼리스트링 사용자에게 받은 값을 가공 후에 다시 출력시키기 위해 필요.
-            const response = await fn_fetch('http://psychologicaltest.pythonanywhere.com/v1/count', 'GET');
-            const result = await response.json();
-            console.log(result);
-        }
-        async function fn_fetch(url, method, data) {
-            try {
-                const response = await fetch(url, {//쿼리스트링 사용자에게 받은 값을 가공 후에 다시 출력시키기 위해 필요.
-                    method: method ? method : "GET",
-                    headers: {
-                        "Content-Type": "application/json;charset=utf-8",
-                    },
-                    body: JSON.stringify(data),
-                });
-                if (response.ok) {
-                    return await response;
-                }
-                throw new Error();
-            } catch (e) {
-                console.log("error : " + e);
-            }
-        }
+        // async function fn_count() { //쿼리스트링 사용자에게 받은 값을 가공 후에 다시 출력시키기 위해 필요.
+        //     const response = await fn_fetch('http://psychologicaltest.pythonanywhere.com/v1/count', 'GET');
+        //     const result = await response.json();
+        //     console.log(result)
+        //     document.getElementById("api-count").innerText = result
+        // }
+        // async function fn_fetch(url, method, data) {
+        //     try {
+        //         const response = await fetch(url, {//쿼리스트링 사용자에게 받은 값을 가공 후에 다시 출력시키기 위해 필요.
+        //             method: method ? method : "GET",
+        //             headers: {
+        //                 "Content-Type": "application/json;charset=utf-8",
+        //             },
+        //             body: JSON.stringify(data),
+        //         });
+        //         if (response.ok) {
+        //             return await response;
+        //         }
+        //         throw new Error();
+        //     } catch (e) {
+        //         console.log("error : " + e);
+        //     }
+        // }
         //클립보드 url 복사
         function copyToClipboard(val) {
             const t = document.createElement("textarea");
@@ -258,6 +262,13 @@
             var sendUrl = "https://earlyway.github.io/"; // 전달할 URL
             window.open("https://twitter.com/intent/tweet?text=" + sendText + "&url=" + sendUrl);
         }
+
+        var countAction = async () => {
+            const response = await fetch('http://psychologicaltest.pythonanywhere.com/v1/count');
+            const result = await response.json();
+            document.getElementById("api-count").innerText = result["count"]
+        }
+        countAction();
     </script>
 </body>
 
